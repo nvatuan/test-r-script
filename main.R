@@ -1,11 +1,11 @@
-devtools::install_github("StevenMMortimer/googlesites")
-
 GoogleAuthClientId <- Sys.getenv("GOOGLE_OAUTH_CLIENT_ID")
 GoogleAuthClientSecret <- Sys.getenv("GOOGLE_OAUTH_CLIENT_SECRET")
 
-if (is.null(GoogleAuthClientId) || is.null(GoogleAuthClientSecret)) {
+if (GoogleAuthClientId == "" || GoogleAuthClientSecret == "") {
   stop("GoogleAuthClientId or GoogleAuthClientSecret is empty. Please set the environment variables.")
 }
+
+devtools::install_github("StevenMMortimer/googlesites")
 
 library(googlesites)
 options(googlesites.site_domain = "site") # or your Apps domain

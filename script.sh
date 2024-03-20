@@ -10,7 +10,7 @@ if [ "$1" = "build" ]; then
 # Check if "run" parameter is provided
 elif [ "$1" = "run" ]; then
   echo "Running the project..."
-  docker run "${TAG}"
+  docker run --env-file ./.env "${TAG}"
 
 # No valid parameter provided
 else
